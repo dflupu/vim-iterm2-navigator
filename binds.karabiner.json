@@ -1,0 +1,89 @@
+{
+    "title": "vim binds",
+    "rules": [
+        {
+            "description": "bind H",
+            "manipulators": [
+                {
+                    "from": {
+                        "key_code": "h",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "shell_command": "osascript ~/.config/nvim/plugged/vim-iterm2-navigator/applescript/forward_to_vim_or_term h"
+                        }
+                    ],
+                    "type": "basic"
+                }
+            ]
+        },
+        {
+            "description": "bind L",
+            "manipulators": [
+                {
+                    "from": {
+                        "key_code": "l",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "shell_command": "osascript ~/.config/nvim/plugged/vim-iterm2-navigator/applescript/forward_to_vim_or_term l"
+                        }
+                    ],
+                    "type": "basic"
+                }
+            ]
+        },
+        {
+            "description": "bind K",
+            "manipulators": [
+                {
+                    "from": {
+                        "key_code": "k",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "shell_command": "osascript ~/.config/nvim/plugged/vim-iterm2-navigator/applescript/forward_to_vim_or_term k"
+                        }
+                    ],
+                    "type": "basic"
+                }
+            ]
+        },
+        {
+            "description": "bind J",
+            "manipulators": [
+                {
+                    "from": {
+                        "key_code": "j",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "shell_command": "osascript ~/.config/nvim/plugged/vim-iterm2-navigator/applescript/forward_to_vim_or_term j"
+                        }
+                    ],
+                    "type": "basic"
+                }
+            ]
+        }
+    ]
+}

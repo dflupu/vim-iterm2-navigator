@@ -1,24 +1,26 @@
-function! SwitchWindow(key)
+command! -nargs=* SwitchWindow call SwitchWindow (<f-args>)
+
+noremap <C-s-h> <Esc>:silent SwitchWindow h<CR>
+noremap <C-s-l> <Esc>:silent SwitchWindow l<CR>
+noremap <C-s-j> <Esc>:silent SwitchWindow j<CR>
+noremap <C-s-k> <Esc>:silent SwitchWindow k<CR>
+
+let s:path = fnamemodify(expand('<sfile>:p'), ':h')
+
+function SwitchWindow(key)
   let oldwindow = winnr()
-  if a:key=='l'
+
+  if a:key == 'l'
     wincmd l
-  elseif a:key=='k'
+  elseif a:key == 'k'
     wincmd k
-  elseif a:key=='j'
+  elseif a:key == 'j'
     wincmd j
-  elseif a:key=='h'
+  elseif a:key == 'h'
     wincmd h
   endif
-  if oldwindow==winnr()
-      if a:key=='l'
-        let cmd = 'osascript ~/.vim/bundle/vim-iterm2-navigator/applescript/iterm2_l.scpt'
-      elseif a:key=='k'
-        let cmd = 'osascript ~/.vim/bundle/vim-iterm2-navigator/applescript/iterm2_k.scpt'
-      elseif a:key=='j'
-        let cmd = 'osascript ~/.vim/bundle/vim-iterm2-navigator/applescript/iterm2_j.scpt'
-      elseif a:key=='h'
-        let cmd = 'osascript ~/.vim/bundle/vim-iterm2-navigator/applescript/iterm2_h.scpt'
-      endif
-      silent call system(cmd)
+
+  if oldwindow == winnr()
+      call system('osascript ' . s:path . '/../applescript/forward_to_term ' . a:key)
   endif
 endfunction

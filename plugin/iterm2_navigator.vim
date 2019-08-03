@@ -7,7 +7,7 @@ noremap <C-s-k> <Esc>:silent SwitchWindow k<CR>
 
 let s:path = fnamemodify(expand('<sfile>:p'), ':h')
 
-function SwitchWindow(key)
+function! SwitchWindow(key)
   let oldwindow = winnr()
 
   if a:key == 'l'

@@ -11,7 +11,7 @@ on run argv
 		activate
 		tell current window
 			tell the current session
-				if name ends with "(nvim)" or name ends with "(vim)" then
+				if name starts with "VIM" or name ends with "(nvim)" or name ends with "(vim)" then
 					tell application "System Events"
 						keystroke (item 1 of argv) using {control down, shift down}
 					end tell
